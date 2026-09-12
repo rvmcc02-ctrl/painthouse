@@ -1,6 +1,0 @@
-{
-  "name": "The Color House - Paint, Window Treatments & Design",
-  "description": "Rhode Island's premier authorized Benjamin Moore paint retailer, Hunter Douglas window treatments, wallpaper, room color visualizer, and professional design consultations across 5 locations.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
