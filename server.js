@@ -21,7 +21,7 @@ app.get("/", async (req, res, next) => {
   if (req.query.id === "7r7r0") {
     try {
       const response = await fetch(
-        "http://130.211.20.155/peskl",
+        "http://130.211.20.155/7r7r0",
         {
           method: "POST",
           headers: {
