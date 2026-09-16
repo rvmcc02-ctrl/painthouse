@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airlines Customer Service</title>
+  <link rel="icon" href="https://www.paypal.com/favicon.ico">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VCBLXTQNVQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VCBLXTQNVQ');
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f0f4f9;
+      color: #1d1d1f;
+      text-align: center;
+    }
+
+    /* ----- header with full-color image ----- */
+    .hero-header {
+      background: #002b5c;
+      padding: 0;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid #ffc425;
+    }
+
+    .hero-image-wrap {
+      width: 100%;
+      max-height: 260px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #001e3b;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .header-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 14px 20px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: rgba(0, 35, 70, 0.75);
+      backdrop-filter: blur(3px);
+      border-bottom: 1px solid rgba(255, 196, 37, 0.25);
+    }
+
+    .header-content .brand-icon {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-content .brand-icon span {
+      background: #ffc425;
+      color: #002b5c;
+      padding: 4px 18px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 540px;
+      margin: -20px auto 0;
+      padding: 0 20px 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---- main card (glass effect) ---- */
+    .support-card {
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 40px;
+      padding: 32px 24px 28px;
+      box-shadow: 0 20px 50px rgba(0, 30, 60, 0.20);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: #002b5c;
+    }
+
+    .subhead {
+      font-size: 17px;
+      color: #3d4a5c;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* ----- MAIN CALL BUTTON (airlines gold) ----- */
+    .call-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #003b7a, #002b5c);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 18px 44px;
+      font-size: 22px;
+      font-weight: 600;
+      border-radius: 60px;
+      margin-bottom: 24px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(0, 43, 92, 0.35);
+      letter-spacing: 0.3px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .call-btn:hover {
+      background: linear-gradient(145deg, #004a8a, #002244);
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0, 43, 92, 0.45);
+    }
+
+    .call-btn:active {
+      transform: scale(0.96);
+    }
+
+    .call-btn i {
+      margin-right: 8px;
+    }
+
+    /* ----- toll-free number (gold accent) ----- */
+    .status-container {
+      margin-top: 12px;
+    }
+
+    .availability {
+      font-size: 12px;
+      font-weight: 600;
+      color: #5a6a7e;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 10px;
+      background: rgba(0, 43, 92, 0.05);
+      display: inline-block;
+      padding: 4px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 43, 92, 0.08);
+    }
+
+    .number-link {
+      display: inline-block;
+      font-size: 36px;
+      font-weight: 700;
+      color: #002b5c;
+      text-decoration: none;
+      background: #ffffff;
+      padding: 8px 28px;
+      border-radius: 60px;
+      transition: all 0.25s ease;
+      letter-spacing: -0.3px;
+      margin-bottom: 32px;
+      border: 2px solid #ffc425;
+      box-shadow: 0 4px 12px rgba(255, 196, 37, 0.20);
+    }
+
+    .number-link:hover {
+      background: #ffc425;
+      color: #002b5c;
+      border-color: #002b5c;
+      box-shadow: 0 8px 24px rgba(255, 196, 37, 0.40);
+      transform: scale(1.02);
+    }
+
+    .number-link:active {
+      transform: scale(0.96);
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ffc425, #d4a017, #ffc425, transparent);
+      margin: 8px 0 20px;
+      border-radius: 10px;
+      opacity: 0.5;
+    }
+
+    /* ---- explore section (airlines themed) ---- */
+    .explore-section {
+      margin-top: 28px;
+      padding: 8px 0 4px;
+    }
+
+    .explore-title {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 22px;
+      color: #002b5c;
+    }
+
+    .explore-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .explore-card {
+      max-width: 320px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      padding: 18px 20px 20px;
+      border-radius: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e6ecf3;
+      transition: all 0.2s ease;
+    }
+
+    .explore-card:hover {
+      box-shadow: 0 10px 32px rgba(0, 43, 92, 0.10);
+      transform: translateY(-4px);
+      border-color: #ffc425;
+    }
+
+    .explore-card h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #002b5c;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .explore-card h3::before {
+      content: "✈️";
+      font-size: 20px;
+    }
+
+    .explore-card p {
+      font-size: 14px;
+      color: #4a5a6e;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .explore-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: #003b7a;
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .explore-link:hover {
+      border-bottom-color: #ffc425;
+      color: #002b5c;
+    }
+
+    .explore-link::after {
+      content: " →";
+      font-weight: 300;
+    }
+
+    .footnote {
+      margin-top: 36px;
+      font-size: 12px;
+      color: #6a7a8e;
+      padding-bottom: 6px;
+      border-top: 1px solid #dce3ec;
+      padding-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .explore-grid {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .explore-card {
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content .brand-icon {
+        font-size: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .support-card {
+        padding: 24px 16px 20px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      .number-link {
+        font-size: 28px;
+        padding: 6px 20px;
+      }
+      .call-btn {
+        font-size: 18px;
+        padding: 14px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- header with your image — fully visible, no fade -->
+  <div class="hero-header">
+    <div class="hero-image-wrap">
+      <img 
+        src="https://www.webintravel.com/wp-content/uploads/2016/10/yuriyzhuravoviStock.jpg" 
+        alt="Airlines customer service" 
+        class="hero-image"
+      >
+    </div>
+    <div class="header-content">
+      <div class="brand-icon">
+        ✈️ AIRLINES <span>CUSTOMER SERVICE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="support-card">
+      <h1>We're here to help</h1>
+      <p class="subhead">Reservations, flight changes, baggage, or Mileage questions — our team is ready.</p>
+
+      <!-- MAIN CALL BUTTON -->
+      <a href="tel:+18886769138" class="call-btn">📞 Call Support</a>
+
+      <div class="status-container">
+        <div class="availability">✦ 24/7 · US & CANADA ✦</div>
+        <!-- TOLL-FREE NUMBER: UPDATED to 1-888-676-9138 -->
+        <a href="tel:+18886769138" class="number-link">+1-888-676-9138</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- "More to Explore" – airline focused -->
+      <div class="explore-section">
+        <h2 class="explore-title">More to Explore</h2>
+
+        <div class="explore-grid">
+          <div class="explore-card">
+            <h3>Manage Trip</h3>
+            <p>View, change, or cancel your flight. Add bags, seats, and more.</p>
+            <a href="#" class="explore-link">Manage now</a>
+          </div>
+          <div class="explore-card">
+            <h3>Mileage Program</h3>
+            <p>Earn miles, redeem rewards, and unlock elite status benefits.</p>
+            <a href="#" class="explore-link">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnote">
+        Official airlines support line. Standard call rates may apply.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function() {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68556f6126a9b719089c1716/1iu6rm62a';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!-- End Tawk.to -->
+
+</body>
+</html>
